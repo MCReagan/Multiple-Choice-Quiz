@@ -12,6 +12,7 @@ var choicesEl = document.getElementById("choices");
 var highScore = document.getElementById("viewHighscore");
 var verify = document.getElementById("rightWrong");
 
+
 var buttonAttributes = {
     style: 'background-color: var(--purple); color: white; margin: 5px; width: 60%; height: 15%;'
 }
@@ -84,10 +85,12 @@ function startGamePage1() {
     choiceD.textContent = "1948";   
     
     choiceA.addEventListener("click", function() {
-        verify.textContent = "Incorrect, try again." ;      
+        verify.textContent = "Incorrect, try again." ; 
+        timeLeft = timeLeft - 5;     
     });
     choiceB.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
     choiceC.addEventListener("click", function () {
         verify.textContent = "Correct!";
@@ -95,6 +98,7 @@ function startGamePage1() {
     });
     choiceD.addEventListener("click", function() {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
 };
 
@@ -119,12 +123,15 @@ function page2() {
 
     choiceA.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
     choiceB.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
     choiceC.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
     choiceD.addEventListener("click", function () {
         verify.textContent = "Correct!";
@@ -154,6 +161,7 @@ function page3() {
 
     choiceA.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
     choiceB.addEventListener("click", function () {
         verify.textContent = "Correct!";
@@ -162,9 +170,11 @@ function page3() {
     });
     choiceC.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
     choiceD.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
 };
 
@@ -189,12 +199,15 @@ function page4() {
 
     choiceA.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
     choiceB.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
     choiceC.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
     choiceD.addEventListener("click", function () {
         verify.textContent = "Correct!";
@@ -224,17 +237,21 @@ function page5() {
 
     choiceA.addEventListener("click", function () {
         verify.textContent = "Correct!";
+        timeEl.textContent = "YOU WON!";
         verify.setAttribute("style", "font-size: 30px");
         localStorage.setItem("Highscore", timeLeft);
     });
     choiceB.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
     choiceC.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
     choiceD.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";
+        timeLeft = timeLeft - 5; 
     });
 };
 

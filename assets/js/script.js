@@ -1,7 +1,7 @@
 // Need to create function to start game when game is pressed
 var startButton = document.querySelector("#startButton");
 var buttonAttributes = {
-    style: 'background-color: var(--green); color: white;'
+    style: 'background-color: var(--purple); color: white;'
 }
 
 startButton.addEventListener("mouseover", function () {
@@ -18,12 +18,11 @@ buttonChange(startButton, buttonAttributes)
 
 startButton.addEventListener("click", function () {
     startGame();
-    return;
 });
 
 
 function startGame() {
-    return;
+    
 };
 
 // Need to create function to replace screen content as game is played

@@ -7,13 +7,13 @@
     --black: black;
     --white: #fff;
     --green: #49fb35;
-    --purple: #ff00ff;
+    --purple: #c519ff;
 }
 
 * {
     border: #fff;
-    border-style: solid;
-    border-width: 1px;
+        border-style: solid;
+        border-width: 1px;
 }
 
 body {
@@ -78,12 +78,21 @@ button {
 
 #start {
     display: flex;
-    justify-content: center
+    justify-content: center;
+    min-height: 50px;
 }
 
 #highscore {
     height: 3vw;
 }
+
+#rightWrong {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+
 
 #startButton {
     margin: 2vw;
@@ -92,5 +101,8 @@ button {
     background-color: var(--neutral);
     color: var(--black);
     font-weight: bolder;
+    border: #fff;
+    border-style: solid;
+    border-width: 1px;
 }
 

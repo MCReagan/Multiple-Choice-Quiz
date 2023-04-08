@@ -61,8 +61,16 @@ button {
     display: flex;
 }
 
+.sidebar {
+    width: 23vw;
+}
+
 .game {
     
+}
+
+#sidebars {
+    display: flex;
 }
 
 #choices {
@@ -71,6 +79,10 @@ button {
     justify-content: center;
     align-items: center;
     margin: 2vw;
+    color: var(--white);
+    width: 50vw;
+    font-size: 30px;
+    text-justify: distribute;
 }
 
 #title {

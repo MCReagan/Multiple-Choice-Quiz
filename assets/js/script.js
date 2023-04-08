@@ -1,3 +1,7 @@
+var choiceA = document.createElement("button");
+var choiceB = document.createElement("button");
+var choiceC = document.createElement("button");
+var choiceD = document.createElement("button");
 var startButton = document.querySelector("#startButton");
 var timeEl = document.getElementById("time");
 var titleEl = document.getElementById("title");
@@ -7,20 +11,6 @@ var buttonAttributes = {
     style: 'background-color: var(--purple); color: white;'
 }
 
-// var choice = document.forms;
-
-// var choiceA = document.createElement("button");
-// var choiceB = document.createElement("button");
-// var choiceC = document.createElement("button");
-// var choiceD = document.createElement("button");
-
-// choice.appendChild(choiceA);
-// choice.appendChild(choiceB);
-// choice.appendChild(choiceC);
-// choice.appendChild(choiceD);
-
-
-
 highScore.addEventListener("click", function () {
     titleEl.textContent = "Highscores";
     startButton.hidden = true;
@@ -29,7 +19,7 @@ highScore.addEventListener("click", function () {
 });
 
 startButton.addEventListener("mouseover", function () {
-buttonChange(startButton, buttonAttributes)
+    buttonChange(startButton, buttonAttributes)
     function buttonChange(element, buttonAttributes) {
         Object.keys(buttonAttributes).forEach(attribute => {
             element.setAttribute(attribute, buttonAttributes[attribute]);
@@ -40,9 +30,25 @@ buttonChange(startButton, buttonAttributes)
     })
 });
 
+function startButtons() {
+    choicesEl.textContent = "";
+
+    choicesEl.appendChild(choiceA);
+    choicesEl.appendChild(choiceB);
+    choicesEl.appendChild(choiceC);
+    choicesEl.appendChild(choiceD);
+
+    choiceA.setAttribute("style", "margin: 5px; width: 60%; height: 15%;");
+    choiceB.setAttribute("style", "margin: 5px; width: 60%; height: 15%;");
+    choiceC.setAttribute("style", "margin: 5px; width: 60%; height: 15%;");
+    choiceD.setAttribute("style", "margin: 5px; width: 60%; height: 15%;");
+    return;
+}
+
 startButton.addEventListener("click", function () {
     startGame();
     startTimer();
+    startButtons();
     startButton.hidden = true;
 });
 
@@ -76,7 +82,7 @@ function startTimer() {
 
 
 function startGame() {
-    
+
 };
 
 // Need to create function to replace screen content as game is played

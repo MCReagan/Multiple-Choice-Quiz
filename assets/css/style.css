@@ -23,7 +23,6 @@ header {
     padding: 1.5vw;
     display: flex;
     justify-content: space-between;
-    min-height: 30px;
     background-color: var(--grayBlue);
     max-width: 100%;
     border-bottom: solid var(--white);
@@ -33,10 +32,14 @@ header {
 h1,
 h2 {
     color: var(--white);
+    margin: 5px;
+   
 }
 
 div a {
     text-decoration: none;
+    margin: 5px;
+    display: block;
 }
 
 main {
@@ -63,7 +66,7 @@ button {
 }
 
 #choices {
-    min-height: 330px;
+    min-height: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,6 +87,7 @@ button {
 
 #highscore {
     height: 3vw;
+    
 }
 
 #rightWrong {

@@ -40,18 +40,18 @@ function startTimer() {
     var timeLeft = 60;
     var timeInterval = setInterval(function () {
         if (timeLeft > 30) {
-            timeEl.textContent = timeLeft + ' seconds';
+            timeEl.textContent = timeLeft + ' seconds remaining';
             timeLeft--;
         } else if (timeLeft > 10) {
             timeEl.setAttribute("style", "color: yellow");
-            timeEl.textContent = timeLeft + ' seconds';
+            timeEl.textContent = timeLeft + ' seconds remaining!';
             timeLeft--;
         } else if (timeLeft > 1) {
             timeEl.setAttribute("style", "color: red");
-            timeEl.textContent = timeLeft + ' seconds!';
+            timeEl.textContent = timeLeft + ' seconds remaining!!!';
             timeLeft--;
         } else if (timeLeft == 1) {
-            timeEl.textContent = timeLeft + ' second!';
+            timeEl.textContent = timeLeft + ' second remaining!!!';
             timeLeft--;
             console.log(timeLeft);
         } else {

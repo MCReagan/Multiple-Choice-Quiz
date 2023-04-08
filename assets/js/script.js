@@ -2,21 +2,31 @@ var startButton = document.querySelector("#startButton");
 var timeEl = document.getElementById("time");
 var titleEl = document.getElementById("title");
 var choicesEl = document.getElementById("choices");
-var choice = document.forms;
-
-// var choice1 = document.createElement("button");
-// var choice2 = document.createElement("button");
-// var choice3 = document.createElement("button");
-// var choice4 = document.createElement("button");
-
-// choice.appendChild(choice1);
-// choice.appendChild(choice2);
-// choice.appendChild(choice3);
-// choice.appendChild(choice4);
-
+var highScore = document.getElementById("viewHighscore");
 var buttonAttributes = {
     style: 'background-color: var(--purple); color: white;'
 }
+
+// var choice = document.forms;
+
+// var choiceA = document.createElement("button");
+// var choiceB = document.createElement("button");
+// var choiceC = document.createElement("button");
+// var choiceD = document.createElement("button");
+
+// choice.appendChild(choiceA);
+// choice.appendChild(choiceB);
+// choice.appendChild(choiceC);
+// choice.appendChild(choiceD);
+
+
+
+highScore.addEventListener("click", function () {
+    titleEl.textContent = "Highscores";
+    startButton.hidden = true;
+    choicesEl.textContent = "";
+
+});
 
 startButton.addEventListener("mouseover", function () {
 buttonChange(startButton, buttonAttributes)

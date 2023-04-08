@@ -8,7 +8,10 @@
     --white: #fff;
 }
 
-
+* {
+    border: #fff;
+    border-style: solid;
+}
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -31,7 +34,6 @@ h2 {
 
 div a {
     text-decoration: none;
-
 }
 
 main {
@@ -50,6 +52,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 2vw;
 }
 
 .quiz {
@@ -57,12 +60,13 @@ main {
 }
 
 .game {
-    margin: 2vw;
+    
 }
 
 .title {
     display: flex;
     justify-content: center;
+    margin: 2vw;
 }
 
 #startButton {
@@ -71,10 +75,11 @@ main {
 }
 
 #highscore {
-    font-size: 25px;
+    height: 3vw;
 }
 
 #start {
+    margin: 2vw;
     min-width: 100px;
     min-height: 30px;
 }

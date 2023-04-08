@@ -96,7 +96,7 @@ button {
 
 #startButton {
     margin: 2vw;
-    min-width: 100px;
+    min-width: 120px;
     min-height: 30px;
     background-color: var(--neutral);
     color: var(--black);

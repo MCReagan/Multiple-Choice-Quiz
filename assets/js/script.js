@@ -30,9 +30,9 @@ startButton.addEventListener("click", function () {
 });
 
 function startTimer() {
-    var timeLeft = 60;
+    var timeLeft = 12;
     var timeInterval = setInterval(function () {
-        if (timeLeft > 30) {
+        if (timeLeft > 11) {
             timeEl.textContent = timeLeft + ' seconds';
             timeLeft--;
         } else if (timeLeft > 10) {
@@ -50,9 +50,10 @@ function startTimer() {
         } else {
             timeEl.textContent = 'You lost!';
             clearInterval(timeInterval);
+            startButton.textContent = "Play again?";
+            startButton.hidden = false;
         }
     }, 1000);
-    startButton.hidden = false;
     timeEl.textContent = '';
 };
 

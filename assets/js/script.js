@@ -2,10 +2,17 @@ var startButton = document.querySelector("#startButton");
 var timeEl = document.getElementById("time");
 var titleEl = document.getElementById("title");
 var choicesEl = document.getElementById("choices");
-var choice1 = document.createElement("button");
-var choice2 = document.createElement("button");
-var choice3 = document.createElement("button");
-var choice4 = document.createElement("button");
+var choice = document.forms;
+
+// var choice1 = document.createElement("button");
+// var choice2 = document.createElement("button");
+// var choice3 = document.createElement("button");
+// var choice4 = document.createElement("button");
+
+// choice.appendChild(choice1);
+// choice.appendChild(choice2);
+// choice.appendChild(choice3);
+// choice.appendChild(choice4);
 
 var buttonAttributes = {
     style: 'background-color: var(--purple); color: white;'
@@ -30,9 +37,9 @@ startButton.addEventListener("click", function () {
 });
 
 function startTimer() {
-    var timeLeft = 12;
+    var timeLeft = 60;
     var timeInterval = setInterval(function () {
-        if (timeLeft > 11) {
+        if (timeLeft > 30) {
             timeEl.textContent = timeLeft + ' seconds';
             timeLeft--;
         } else if (timeLeft > 10) {
@@ -56,6 +63,7 @@ function startTimer() {
     }, 1000);
     timeEl.textContent = '';
 };
+
 
 function startGame() {
     

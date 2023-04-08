@@ -63,7 +63,7 @@ button {
 }
 
 #choices {
-    min-height: 350px;
+    min-height: 330px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,8 +91,6 @@ button {
     justify-content: center;
     margin: 10px;
 }
-
-
 
 #startButton {
     margin: 2vw;

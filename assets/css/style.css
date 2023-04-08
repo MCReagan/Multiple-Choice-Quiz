@@ -46,6 +46,7 @@ main {
 
 button {
     border-radius: 12px;
+    margin: 5px;
 }
 
 .header {

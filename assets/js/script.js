@@ -11,6 +11,9 @@ var choicesEl = document.getElementById("choices");
 var highScore = document.getElementById("viewHighscore");
 // var myTimer;
 var buttonAttributes = {
+    style: 'background-color: var(--purple); color: white; margin: 5px; width: 60%; height: 15%;'
+}
+var startAttributes = {
     style: 'background-color: var(--purple); color: white;'
 }
 
@@ -24,10 +27,10 @@ highScore.addEventListener("click", function () {
 });
 
 startButton.addEventListener("mouseover", function () {
-    buttonChange(startButton, buttonAttributes)
-    function buttonChange(element, buttonAttributes) {
-        Object.keys(buttonAttributes).forEach(attribute => {
-            element.setAttribute(attribute, buttonAttributes[attribute]);
+    buttonChange(startButton, startAttributes)
+    function buttonChange(element, startAttributes) {
+        Object.keys(startAttributes).forEach(attribute => {
+            element.setAttribute(attribute, startAttributes[attribute]);
         });
     }
     startButton.addEventListener("mouseout", function () {
@@ -35,7 +38,55 @@ startButton.addEventListener("mouseover", function () {
     })
 });
 
-function startGamePage1() {
+choiceA.addEventListener("mouseover", function () {
+buttonChange(choiceA, buttonAttributes)
+    function buttonChange(element, buttonAttributes) {
+        Object.keys(buttonAttributes).forEach(attribute => {
+            element.setAttribute(attribute, buttonAttributes[attribute]);
+        });
+    }
+    choiceA.addEventListener("mouseleave", function () {
+        choiceA.setAttribute("style", "background-color: margin: 5px; width: 60%; height: 15%;");
+    })
+});
+
+choiceB.addEventListener("mouseover", function () {
+    buttonChange(choiceB, buttonAttributes)
+    function buttonChange(element, buttonAttributes) {
+        Object.keys(buttonAttributes).forEach(attribute => {
+            element.setAttribute(attribute, buttonAttributes[attribute]);
+        });
+    }
+    choiceB.addEventListener("mouseout", function () {
+        choiceB.setAttribute("style", "background-color: margin: 5px; width: 60%; height: 15%;");
+    })
+});
+
+choiceC.addEventListener("mouseover", function () {
+    buttonChange(choiceC, buttonAttributes)
+    function buttonChange(element, buttonAttributes) {
+        Object.keys(buttonAttributes).forEach(attribute => {
+            element.setAttribute(attribute, buttonAttributes[attribute]);
+        });
+    }
+    choiceC.addEventListener("mouseout", function () {
+        choiceC.setAttribute("style", "background-color: margin: 5px; width: 60%; height: 15%;");
+    })
+});
+
+choiceD.addEventListener("mouseover", function () {
+    buttonChange(choiceD, buttonAttributes)
+    function buttonChange(element, buttonAttributes) {
+        Object.keys(buttonAttributes).forEach(attribute => {
+            element.setAttribute(attribute, buttonAttributes[attribute]);
+        });
+    }
+    choiceD.addEventListener("mouseout", function () {
+        choiceD.setAttribute("style", "background-color: margin: 5px; width: 60%; height: 15%;");
+    })
+});
+
+function startGame() {
     choicesEl.textContent = "";
     titleEl.textContent = "What year did WWII end?";
 
@@ -53,12 +104,12 @@ function startGamePage1() {
     choiceB.textContent = "1944";
     choiceC.textContent = "1945";
     choiceD.textContent = "1946";
-    return;
+    
 }
 
 startButton.addEventListener("click", function () {
     startTimer();
-    startGamePage1();
+    startGame();
     startButton.hidden = true;
 });
 
@@ -89,7 +140,7 @@ function startTimer() {
     }, 1000);
     timeEl.textContent = '';
     return;
-}; clearInterval(timeInterval);
+};
 
 
 

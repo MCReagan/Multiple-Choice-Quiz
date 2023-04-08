@@ -11,9 +11,7 @@
 }
 
 * {
-    border: #fff;
-        border-style: solid;
-        border-width: 1px;
+   
 }
 
 body {
@@ -28,6 +26,8 @@ header {
     min-height: 30px;
     background-color: var(--grayBlue);
     max-width: 100%;
+    border-bottom: solid var(--white);
+    border-width: 8px;
 }
 
 h1,

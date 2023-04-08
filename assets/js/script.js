@@ -15,7 +15,7 @@ highScore.addEventListener("click", function () {
     titleEl.textContent = "Highscores";
     startButton.hidden = true;
     choicesEl.textContent = "";
-
+    timeEl.textContent = "";
 });
 
 startButton.addEventListener("mouseover", function () {
@@ -78,7 +78,8 @@ function startTimer() {
         }
     }, 1000);
     timeEl.textContent = '';
-};
+    
+}; clearInterval(timeInterval);
 
 
 function startGame() {

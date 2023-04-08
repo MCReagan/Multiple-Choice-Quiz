@@ -28,15 +28,6 @@ startButton.addEventListener("click", function () {
     startButton.hidden = true;
 });
 
-highScore.addEventListener("click", function () {
-    if (confirm("Are you sure you want to leave this page?")) {
-        titleEl.textContent = "Highscores";
-        startButton.hidden = true;
-        choicesEl.textContent = "";
-        timeEl.style.display = "none";
-        clearInterval(timeInterval);
-    } else;
-});
 
 function startTimer() {
     timeInterval = setInterval(function () {
@@ -244,8 +235,8 @@ function page4() {
     });
     choiceD.addEventListener("click", function () {
         if ((choiceD.textContent == "6")) {
-        verify.textContent = "Correct!";
-        page5();
+            verify.textContent = "Correct!";
+            page5();
         }
     });
 };
@@ -271,10 +262,10 @@ function page5() {
 
     choiceA.addEventListener("click", function () {
         if ((choiceA.textContent == "1788")) {
-        timeEl.textContent = "YOU WON!";
-        localStorage.setItem("Highscore", timeLeft);
-        clearInterval(timeInterval);
-        initials();
+            timeEl.textContent = "YOU WON!";
+            localStorage.setItem("Highscore", timeLeft);
+            clearInterval(timeInterval);
+            initials();
         }
     });
     choiceB.addEventListener("click", function () {
@@ -297,12 +288,31 @@ function page5() {
     });
 };
 
-function initials () {
+function highScore1() {
+    verify.appendChild(choiceA);
+    verify.appendChild(choiceB);
+    choiceA.textContent = "Start Over";
+    choiceB.textContent = "Clear Highscores";
+    titleEl.textContent = "Highscores";
+    startButton.hidden = true;
+    choicesEl.textContent = "";
+    timeEl.style.display = "none";
+}
+
+function initials() {
+    score = localStorage.getItem("Highscore");
     timeEl.textContent = "YOU WON!";
     timeEl.setAttribute("style", "color: green");
     titleEl.textContent = "Enter your initials below to save your highscore!"
-    verify.textContent = "";
+    verify.textContent = "Your score was " + score + "!";
+    highScore();
 }
+
+highScore.addEventListener("click", function () {
+    if (confirm("Are you sure you want to leave this page?")) {
+        highScore1();
+    } else;
+});
 
 startButton.addEventListener("mouseover", function () {
     buttonChange(startButton, startAttributes)
@@ -315,6 +325,7 @@ startButton.addEventListener("mouseover", function () {
         startButton.setAttribute("style", "background-color: ");
     })
 });
+
 
 choiceA.addEventListener("mouseover", function () {
     buttonChange(choiceA, buttonAttributes)

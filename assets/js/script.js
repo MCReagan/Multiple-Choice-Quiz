@@ -1,4 +1,5 @@
 var timeLeft = 60;
+var timeInterval = timeInterval;
 var button = "button";
 var choiceA = document.createElement("button");
 var choiceB = document.createElement("button");
@@ -11,6 +12,7 @@ var titleEl = document.getElementById("title");
 var choicesEl = document.getElementById("choices");
 var highScore = document.getElementById("viewHighscore");
 var verify = document.getElementById("rightWrong");
+verify.setAttribute("style", "font-size: 30px");
 
 
 var buttonAttributes = {
@@ -31,13 +33,15 @@ highScore.addEventListener("click", function () {
         titleEl.textContent = "Highscores";
         startButton.hidden = true;
         choicesEl.textContent = "";
-    timeEl.style.display = "none";
-} else;
+        timeEl.style.display = "none";
+        clearInterval(timeInterval);
+    } else;
 });
 
 function startTimer() {
-    var timeInterval = setInterval(function () {
+    timeInterval = setInterval(function () {
         if (timeLeft > 30) {
+            timeEl.setAttribute("style", "color: green");
             timeEl.textContent = timeLeft + ' seconds remaining';
             timeLeft--;
         } else if (timeLeft > 10) {
@@ -68,37 +72,46 @@ function startTimer() {
 function startGamePage1() {
     choicesEl.textContent = "";
     titleEl.textContent = "In what year did WWII end?";
-    
+
     choicesEl.appendChild(choiceA);
     choicesEl.appendChild(choiceB);
     choicesEl.appendChild(choiceC);
     choicesEl.appendChild(choiceD);
-    
+
     choiceA.setAttribute("style", "margin: 5px; width: 60%; height: 15%;");
     choiceB.setAttribute("style", "margin: 5px; width: 60%; height: 15%;");
     choiceC.setAttribute("style", "margin: 5px; width: 60%; height: 15%;");
     choiceD.setAttribute("style", "margin: 5px; width: 60%; height: 15%;");
-    
+
     choiceA.textContent = "1940";
     choiceB.textContent = "1941";
     choiceC.textContent = "1945";
-    choiceD.textContent = "1948";   
-    
-    choiceA.addEventListener("click", function() {
-        verify.textContent = "Incorrect, try again." ; 
-        timeLeft = timeLeft - 5;     
+    choiceD.textContent = "1948";
+
+    choiceA.addEventListener("click", function () {
+        if ((choiceA.textContent == "1940")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
     choiceB.addEventListener("click", function () {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+        if ((choiceB.textContent == "1941")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
     choiceC.addEventListener("click", function () {
-        verify.textContent = "Correct!";
-        page2();
+        if ((choiceC.textContent == "1945")) {
+            verify.textContent = "Correct!";
+
+            page2();
+        }
     });
-    choiceD.addEventListener("click", function() {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+    choiceD.addEventListener("click", function () {
+        if ((choiceD.textContent == "1948")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
 };
 
@@ -122,21 +135,28 @@ function page2() {
     choiceD.textContent = "England";
 
     choiceA.addEventListener("click", function () {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+        if ((choiceA.textContent == "France")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
     choiceB.addEventListener("click", function () {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+        if ((choiceB.textContent == "Germany")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
     choiceC.addEventListener("click", function () {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+        if ((choiceC.textContent == "Spain")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
     choiceD.addEventListener("click", function () {
-        verify.textContent = "Correct!";
-        verify.setAttribute("style", "font-size: 30px");
-        page3();
+        if ((choiceD.textContent == "England")) {
+            verify.textContent = "Correct!";
+            page3();
+        }
     });
 };
 
@@ -160,21 +180,28 @@ function page3() {
     choiceD.textContent = "1922";
 
     choiceA.addEventListener("click", function () {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+        if ((choiceA.textContent == "1888")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
     choiceB.addEventListener("click", function () {
-        verify.textContent = "Correct!";
-        verify.setAttribute("style", "font-size: 30px");
-        page4();
+        if ((choiceB.textContent == "1903")) {
+            verify.textContent = "Correct!";
+            page4();
+        }
     });
     choiceC.addEventListener("click", function () {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+        if ((choiceC.textContent == "1917")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
     choiceD.addEventListener("click", function () {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+        if ((choiceD.textContent == "1922")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
 };
 
@@ -198,21 +225,28 @@ function page4() {
     choiceD.textContent = "6";
 
     choiceA.addEventListener("click", function () {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+        if ((choiceA.textContent == "2")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
     choiceB.addEventListener("click", function () {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+        if ((choiceB.textContent == "4")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
     choiceC.addEventListener("click", function () {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+        if ((choiceC.textContent == "5")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
     choiceD.addEventListener("click", function () {
+        if ((choiceD.textContent == "6")) {
         verify.textContent = "Correct!";
-        verify.setAttribute("style", "font-size: 30px");
         page5();
+        }
     });
 };
 
@@ -236,24 +270,39 @@ function page5() {
     choiceD.textContent = "1812";
 
     choiceA.addEventListener("click", function () {
-        verify.textContent = "Correct!";
+        if ((choiceA.textContent == "1788")) {
         timeEl.textContent = "YOU WON!";
-        verify.setAttribute("style", "font-size: 30px");
         localStorage.setItem("Highscore", timeLeft);
+        clearInterval(timeInterval);
+        initials();
+        }
     });
     choiceB.addEventListener("click", function () {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+        if ((choiceB.textContent == "1792")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
     choiceC.addEventListener("click", function () {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+        if ((choiceC.textContent == "1800")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
     choiceD.addEventListener("click", function () {
-        verify.textContent = "Incorrect, try again.";
-        timeLeft = timeLeft - 5; 
+        if ((choiceD.textContent == "1812")) {
+            verify.textContent = "Incorrect, try again.";
+            timeLeft -= 5;
+        }
     });
 };
+
+function initials () {
+    timeEl.textContent = "YOU WON!";
+    timeEl.setAttribute("style", "color: green");
+    titleEl.textContent = "Enter your initials below to save your highscore!"
+    verify.textContent = "";
+}
 
 startButton.addEventListener("mouseover", function () {
     buttonChange(startButton, startAttributes)
@@ -268,7 +317,7 @@ startButton.addEventListener("mouseover", function () {
 });
 
 choiceA.addEventListener("mouseover", function () {
-buttonChange(choiceA, buttonAttributes)
+    buttonChange(choiceA, buttonAttributes)
     function buttonChange(element, buttonAttributes) {
         Object.keys(buttonAttributes).forEach(attribute => {
             element.setAttribute(attribute, buttonAttributes[attribute]);

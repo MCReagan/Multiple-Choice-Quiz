@@ -26,6 +26,7 @@ buttonChange(startButton, buttonAttributes)
 startButton.addEventListener("click", function () {
     startGame();
     startTimer();
+    startButton.hidden = true;
 });
 
 function startTimer() {
@@ -51,6 +52,7 @@ function startTimer() {
             clearInterval(timeInterval);
         }
     }, 1000);
+    startButton.hidden = false;
     timeEl.textContent = '';
 };
 

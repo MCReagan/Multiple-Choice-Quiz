@@ -6,6 +6,8 @@
     --bluer: #166068;
     --black: black;
     --white: #fff;
+    --green: #49fb35;
+    --purple: #ff00ff;
 }
 
 * {
@@ -74,7 +76,7 @@ button {
     margin: 2vw;
 }
 
-#startButton {
+#start {
     display: flex;
     justify-content: center
 }
@@ -83,14 +85,12 @@ button {
     height: 3vw;
 }
 
-#start {
+#startButton {
     margin: 2vw;
     min-width: 100px;
     min-height: 30px;
     background-color: var(--neutral);
     color: var(--black);
+    font-weight: bolder;
 }
 
-a:hover {
-    background-color: purple;
-}

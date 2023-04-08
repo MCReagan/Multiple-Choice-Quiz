@@ -1,6 +1,9 @@
 // Need to create function to start game when game is pressed
 var startButton = document.querySelector("#startButton");
 var timeEl = document.getElementById("time");
+var titleEl = document.getElementById("title");
+var choicesEl = document.getElementById("choices");
+
 
 var buttonAttributes = {
     style: 'background-color: var(--purple); color: white;'
@@ -24,8 +27,7 @@ startButton.addEventListener("click", function () {
 });
 
 function startTimer() {
-    var timeLeft = 31;
-
+    var timeLeft = 60;
     var timeInterval = setInterval(function () {
         if (timeLeft > 30) {
             timeEl.textContent = timeLeft + ' seconds';

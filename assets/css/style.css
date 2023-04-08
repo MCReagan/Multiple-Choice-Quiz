@@ -20,7 +20,7 @@ body {
 }
 
 header {
-    padding: 1vw;
+    padding: 1.5vw;
     display: flex;
     justify-content: space-between;
     min-height: 30px;
@@ -54,14 +54,6 @@ button {
     width: 100vw;
 }
 
-.selection {
-    min-height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2vw;
-}
-
 .quiz {
     display: flex;
 }
@@ -70,7 +62,15 @@ button {
     
 }
 
-.title {
+#choices {
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2vw;
+}
+
+#title {
     display: flex;
     justify-content: center;
     margin: 2vw;

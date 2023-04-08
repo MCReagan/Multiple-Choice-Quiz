@@ -1,0 +1,80 @@
+:root {
+    --gray: #4f6d7a;
+    --grayBlue: #c0d6df;
+    --neutral: #DBE9EE;
+    --blue: #4A6FA5;
+    --bluer: #166068;
+    --black: black;
+    --white: #fff;
+}
+
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--gray);
+}
+
+header {
+    padding: 1vw;
+    display: flex;
+    justify-content: space-between;
+    min-height: 30px;
+    background-color: var(--grayBlue);
+    max-width: 100%;
+}
+
+h1,
+h2 {
+    color: var(--white);
+}
+
+div a {
+    text-decoration: none;
+
+}
+
+main {
+    max-width: 100%;
+    width: 100vw;
+
+}
+
+.header {
+    max-width: 100%;
+    width: 100vw;
+}
+
+.selection {
+    min-height: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz {
+    display: flex;
+}
+
+.game {
+    margin: 2vw;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+#startButton {
+    display: flex;
+    justify-content: center
+}
+
+#highscore {
+    font-size: 25px;
+}
+
+#start {
+    min-width: 100px;
+    min-height: 30px;
+}

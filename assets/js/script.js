@@ -1,9 +1,11 @@
-// Need to create function to start game when game is pressed
 var startButton = document.querySelector("#startButton");
 var timeEl = document.getElementById("time");
 var titleEl = document.getElementById("title");
 var choicesEl = document.getElementById("choices");
-
+var choice1 = document.createElement("button");
+var choice2 = document.createElement("button");
+var choice3 = document.createElement("button");
+var choice4 = document.createElement("button");
 
 var buttonAttributes = {
     style: 'background-color: var(--purple); color: white;'

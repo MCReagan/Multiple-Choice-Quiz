@@ -1,4 +1,5 @@
 var timeLeft = 60;
+var button = "button";
 var choiceA = document.createElement("button");
 var choiceB = document.createElement("button");
 var choiceC = document.createElement("button");
@@ -19,7 +20,6 @@ highScore.addEventListener("click", function () {
     titleEl.textContent = "Highscores";
     startButton.hidden = true;
     choicesEl.textContent = "";
-    // timeEl.textContent = "";
     timeEl.style.display = "none";
 });
 
@@ -35,8 +35,9 @@ startButton.addEventListener("mouseover", function () {
     })
 });
 
-function startButtons() {
+function startGamePage1() {
     choicesEl.textContent = "";
+    titleEl.textContent = "What year did WWII end?";
 
     choicesEl.appendChild(choiceA);
     choicesEl.appendChild(choiceB);
@@ -47,13 +48,17 @@ function startButtons() {
     choiceB.setAttribute("style", "margin: 5px; width: 60%; height: 15%;");
     choiceC.setAttribute("style", "margin: 5px; width: 60%; height: 15%;");
     choiceD.setAttribute("style", "margin: 5px; width: 60%; height: 15%;");
+
+    choiceA.textContent = "1943";
+    choiceB.textContent = "1944";
+    choiceC.textContent = "1945";
+    choiceD.textContent = "1946";
     return;
 }
 
 startButton.addEventListener("click", function () {
-    startGame();
     startTimer();
-    startButtons();
+    startGamePage1();
     startButton.hidden = true;
 });
 
@@ -87,9 +92,4 @@ function startTimer() {
 }; clearInterval(timeInterval);
 
 
-function startGame() {
-
-};
-
-// Need to create function to replace screen content as game is played
 

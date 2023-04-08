@@ -46,7 +46,6 @@ function startTimer() {
         } else if (timeLeft == 1) {
             timeEl.textContent = timeLeft + ' second remaining!!!';
             timeLeft--;
-            console.log(timeLeft);
         } else {
             choicesEl.textContent = 'GAME OVER';
             timeEl.textContent = 'You lost!';
@@ -54,9 +53,11 @@ function startTimer() {
             clearInterval(timeInterval);
             startButton.textContent = "Play again?";
             startButton.hidden = false;
+            verify.textContent = "";
         }
     }, 1000);
     timeEl.textContent = '';
+    timeLeft = 60;
     return;
 };
 

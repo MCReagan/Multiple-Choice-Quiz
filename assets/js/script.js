@@ -35,7 +35,6 @@ highScore.addEventListener("click", function () {
 });
 
 function startTimer() {
-    timeLeft = 60;
     var timeInterval = setInterval(function () {
         if (timeLeft > 30) {
             timeEl.textContent = timeLeft + ' seconds remaining';
@@ -53,7 +52,9 @@ function startTimer() {
             timeLeft--;
             console.log(timeLeft);
         } else {
+            choicesEl.textContent = 'GAME OVER';
             timeEl.textContent = 'You lost!';
+            titleEl.textContent = 'HISTORY QUIZ';
             clearInterval(timeInterval);
             startButton.textContent = "Play again?";
             startButton.hidden = false;
@@ -224,6 +225,7 @@ function page5() {
     choiceA.addEventListener("click", function () {
         verify.textContent = "Correct!";
         verify.setAttribute("style", "font-size: 30px");
+        localStorage.setItem("Highscore", timeLeft);
     });
     choiceB.addEventListener("click", function () {
         verify.textContent = "Incorrect, try again.";

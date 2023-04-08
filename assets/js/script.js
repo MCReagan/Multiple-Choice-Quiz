@@ -4,6 +4,7 @@ var choiceA = document.createElement("button");
 var choiceB = document.createElement("button");
 var choiceC = document.createElement("button");
 var choiceD = document.createElement("button");
+var choice = [choiceA, choiceB, choiceC, choiceD];
 var startButton = document.querySelector("#startButton");
 var timeEl = document.getElementById("time");
 var titleEl = document.getElementById("title");
@@ -103,9 +104,13 @@ function startGame() {
     choiceA.textContent = "1943";
     choiceB.textContent = "1944";
     choiceC.textContent = "1945";
-    choiceD.textContent = "1946";
+    choiceD.textContent = "1946";     
+};
+
     
-}
+
+
+
 
 startButton.addEventListener("click", function () {
     startTimer();

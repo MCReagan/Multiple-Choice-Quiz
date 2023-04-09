@@ -5,6 +5,7 @@ var choiceA = document.createElement("button");
 var choiceB = document.createElement("button");
 var choiceC = document.createElement("button");
 var choiceD = document.createElement("button");
+var entry = document.createElement("input");
 var choice = [choiceA, choiceB, choiceC, choiceD];
 var startButton = document.querySelector("#startButton");
 var timeEl = document.getElementById("time");
@@ -289,24 +290,62 @@ function page5() {
     });
 };
 
+function initials() {
+    score = localStorage.getItem("Highscore");
+    timeEl.textContent = "YOU WON!";
+    timeEl.setAttribute("style", "color: green");
+    titleEl.textContent = "Enter your initials below to save your highscore!"
+    verify.textContent = "You had " + score + " seconds left. Your score is " + score + "!";
+    choices.removeChild(choiceA);
+    choices.removeChild(choiceB);
+    choices.removeChild(choiceC);
+    choices.removeChild(choiceD);
+    renderHighScore();
+}
+
+function renderHighScore() {
+    choices.appendChild(entry);
+    choices.appendChild(choiceA);
+    choiceA.textContent = "Confirm";
+    choiceA.addEventListener("click", function () {
+        if ((choiceA.textContent == "Confirm")) {
+            if (entry.value !== "") {
+                console.log(entry.value);
+                initial = localStorage.setItem("initials", entry.value);
+                return
+            } else {
+                alert("Please enter at least one initial.");
+                return
+            }
+           
+        };
+    });
+};
+
 function highScore1() {
+    clearInterval(timeInterval);
+    verify.textContent = "";
+    choicesEl.textContent = "";
     verify.appendChild(choiceA);
     verify.appendChild(choiceB);
     choiceA.textContent = "Start Over";
     choiceB.textContent = "Clear Highscores";
     titleEl.textContent = "Highscores";
     startButton.hidden = true;
-    choicesEl.textContent = "";
     timeEl.style.display = "none";
-}
-
-function initials() {
-    score = localStorage.getItem("Highscore");
-    timeEl.textContent = "YOU WON!";
-    timeEl.setAttribute("style", "color: green");
-    titleEl.textContent = "Enter your initials below to save your highscore!"
-    verify.textContent = "Your score was " + score + "!";
-    highScore();
+    choiceA.addEventListener("click", function () {
+        if ((choiceA.textContent == "Start Over")) {
+            window.location.reload();
+            return
+        }
+    });
+    choiceB.addEventListener("click", function () {
+        if ((choiceB.textContent == "Clear Highscores")) {
+            localStorage.clear();
+            choicesEl.textContent = "";
+            return
+        }
+    })
 }
 
 highScore.addEventListener("click", function () {

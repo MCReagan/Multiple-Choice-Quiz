@@ -14,6 +14,8 @@ var choicesEl = document.getElementById("choices");
 var highScore = document.getElementById("viewHighscore");
 var verify = document.getElementById("rightWrong");
 verify.setAttribute("style", "font-size: 30px");
+var li = document.createElement("li");
+var ul = document.createElement("ul");
 
 
 var buttonAttributes = {
@@ -27,6 +29,7 @@ startButton.addEventListener("click", function () {
     startTimer();
     startGamePage1();
     startButton.hidden = true;
+    return
 });
 
 
@@ -106,6 +109,7 @@ function startGamePage1() {
             timeLeft -= 5;
         }
     });
+    return
 };
 
 function page2() {
@@ -151,6 +155,7 @@ function page2() {
             page3();
         }
     });
+    return
 };
 
 function page3() {
@@ -196,6 +201,7 @@ function page3() {
             timeLeft -= 5;
         }
     });
+    return
 };
 
 function page4() {
@@ -241,6 +247,7 @@ function page4() {
             page5();
         }
     });
+    return
 };
 
 function page5() {
@@ -288,6 +295,7 @@ function page5() {
             timeLeft -= 5;
         }
     });
+    return
 };
 
 function initials() {
@@ -301,6 +309,7 @@ function initials() {
     choices.removeChild(choiceC);
     choices.removeChild(choiceD);
     renderHighScore();
+    return
 }
 
 function renderHighScore() {
@@ -310,8 +319,8 @@ function renderHighScore() {
     choiceA.addEventListener("click", function () {
         if ((choiceA.textContent == "Confirm")) {
             if (entry.value !== "") {
-                console.log(entry.value);
                 initial = localStorage.setItem("initials", entry.value);
+                highScore1();
                 return
             } else {
                 alert("Please enter at least one initial.");
@@ -320,6 +329,7 @@ function renderHighScore() {
            
         };
     });
+    return
 };
 
 function highScore1() {
@@ -328,6 +338,14 @@ function highScore1() {
     choicesEl.textContent = "";
     verify.appendChild(choiceA);
     verify.appendChild(choiceB);
+    if (localStorage.getItem("initials") !== null) {
+    
+    li.textContent = localStorage.getItem("initials") + " - " + localStorage.getItem("Highscore");
+    const save = choices.appendChild(ul);
+    li.setAttribute("style", "list-style-type: none; border: solid white 5px; padding: 5px 15px; background-color: var(--blue);")
+    save;
+    ul.appendChild(li);
+    } 
     choiceA.textContent = "Start Over";
     choiceB.textContent = "Clear Highscores";
     titleEl.textContent = "Highscores";
@@ -335,7 +353,11 @@ function highScore1() {
     timeEl.style.display = "none";
     choiceA.addEventListener("click", function () {
         if ((choiceA.textContent == "Start Over")) {
-            window.location.reload();
+            choiceA.textContent = "";
+            choiceB.textContent = "";
+            choiceC.textContent = "";
+            choiceD.textContent = "";
+            window.history.go(0);
             return
         }
     });
@@ -346,6 +368,7 @@ function highScore1() {
             return
         }
     })
+    return
 }
 
 highScore.addEventListener("click", function () {

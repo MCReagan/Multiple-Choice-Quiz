@@ -249,7 +249,7 @@ function page4() {
     });
     return
 };
-
+var timer;
 function page5() {
     choicesEl.textContent = "";
     titleEl.textContent = "In what year was the United States Constitution ratified?";
@@ -272,9 +272,17 @@ function page5() {
     choiceA.addEventListener("click", function () {
         if ((choiceA.textContent == "1788")) {
             timeEl.textContent = "YOU WON!";
-            localStorage.setItem("Highscore", timeLeft);
-            clearInterval(timeInterval);
-            initials();
+            if (timeLeft > localStorage.getItem("Highscore")) {
+                localStorage.setItem("Highscore", timeLeft);
+                timer = timeLeft;
+                clearInterval(timeInterval);
+                initials();
+            }
+            else {
+                clearInterval(timeInterval);
+                initials();
+            }
+           
         }
     });
     choiceB.addEventListener("click", function () {
@@ -319,7 +327,13 @@ function renderHighScore() {
     choiceA.addEventListener("click", function () {
         if ((choiceA.textContent == "Confirm")) {
             if (entry.value !== "") {
+                if (timer >= localStorage.getItem("Highscore")) {
                 initial = localStorage.setItem("initials", entry.value);
+                    highScore1();
+                } else {
+                    highScore1();
+                    return
+                }
                 highScore1();
                 return
             } else {
@@ -347,8 +361,8 @@ function highScore1() {
     ul.appendChild(li);
     } 
     choiceA.textContent = "Start Over";
-    choiceB.textContent = "Clear Highscores";
-    titleEl.textContent = "Highscores";
+    choiceB.textContent = "Clear Highscore";
+    titleEl.textContent = "Highscore";
     startButton.hidden = true;
     timeEl.style.display = "none";
     choiceA.addEventListener("click", function () {
@@ -362,7 +376,7 @@ function highScore1() {
         }
     });
     choiceB.addEventListener("click", function () {
-        if ((choiceB.textContent == "Clear Highscores")) {
+        if ((choiceB.textContent == "Clear Highscore")) {
             localStorage.clear();
             choicesEl.textContent = "";
             return

@@ -99,7 +99,6 @@ function startGamePage1() {
     choiceC.addEventListener("click", function () {
         if ((choiceC.textContent == "1945")) {
             verify.textContent = "Correct!";
-
             page2();
         }
     });
